@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wing Whiz - Tamil Nadu Birds Identifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Simplifica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baufra&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="video-screen">
+        <video autoplay muted playsinline id="intro-video">
+            <source src="intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <header>
+        <h1>WING WHIZ</h1>
+    </header>
+    <main>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#identify">Image Identifier</a></li>
+                <li><a href="#behavior">Audio Identifier</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+        <!-- Home Section -->
+        <section id="home">
+    
+            <video width="800" height="450" autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            
+            <p>Wing Whiz is your go-to resource for identifying and learning about the diverse bird species found in Tamil Nadu, India. Whether you're a birdwatcher, a student, or simply curious about avian life, our platform offers tools and resources to help you explore the wonderful world of birds.</p>
+            <p>From identification tools and behavioral insights to a rich gallery showcasing the avifauna of Tamil Nadu, Wing Whiz is dedicated to fostering a deeper understanding and appreciation of birds. Join us on this exciting journey into the skies!</p>
+        </section>
+        <!-- Identify Section -->
+        <section id="identify">
+            <h2>Image Identifier</h2>
+            <p>Snap a photo of your feathered friend and let’s become bird-encyclopedias together. 🐦📸</p>
+            <div class="upload-section">
+                <input type="file" id="birdImage" accept="image/*" onchange="loadImage(event)">
+                <button onclick="identifyBird()">Identify Bird</button>
+            </div>
+            <div id="imagePreview"></div>
+            <div id="birdIdentificationResult"></div>
+        </section>
+        
+        <!-- Behavior Section -->
+        <section id="behavior">
+            <h2>Audio Identifier</h2>
+            <p>Got a recording of bird tweets? Upload it, and we’ll decode their secret chirpy messages. 🎵🦜</p>
+            <div class="upload-section">
+                <input type="file" id="birdAudio" accept="audio/*" onchange="loadAudio(event)">
+                <button onclick="analyzeBirdAudio()">Analyze Audio</button>
+            </div>
+            <audio id="birdAudioPreview" controls></audio>
+            <div id="audioAnalysisResult"></div>
+        </section>
+        <!-- Gallery Section -->
+         <h2>Featured Birds Of Tamil Nadu</h2>
+        <section id="gallery" class="featured-birds">
+            
+            <div class="bird-card">
+                <img src="sparrow.jpg" alt="Sparrow">
+                <h3>Sparrow</h3>
+                <p>The sparrow is a small, plump bird known for its cheerful songs.</p>
+            </div>
+            <div class="bird-card">
+                <img src="peacock.jpg" alt="Peacock">
+                <h3>Peacock</h3>
+                <p>The peacock is known for its vibrant plumage and majestic display.</p>
+            </div>
+            <div class="bird-card">
+                <img src="king.jpg" alt="Kingfisher">
+                <h3>Kingfisher</h3>
+                <p>The kingfisher is a brightly colored bird known for its fishing skills.</p>
+            </div>
+            <div class="bird-card">
+                <img src="parrot.jpg" alt="Parrot">
+                <h3>Parrot</h3>
+                <p>The parrot is a highly intelligent bird known for its ability to mimic sounds.</p>
+            </div>
+            <div class="bird-card">
+                <img src="flamingo.jpg" alt="Flamingo">
+                <h3>Flamingo</h3>
+                <p>Flamingos get their vibrant pink color from carotenoid pigments in their diet, primarily found in algae and crustaceans.</p>
+            </div>
+            <div class="bird-card">
+                <img src="blue flycatcher.jpg" alt="Blue Flycatcher">
+                <h3>Blue Flycatcher</h3>
+                <p>The blue flycatcher is known for its striking cobalt blue plumage and melodious song, typically found in forested areas across Southeast Asia.</p>
+            </div>
+            <div class="bird-card">
+                <img src="robin.jpg" alt="Robin">
+                <h3>Robin</h3>
+                <p>The Robin is known for its bright orange-red breast and melodious song, often considered a symbol of spring in many cultures.</p>
+            </div>
+            <div class="bird-card">
+                <img src="prinia1.jpg" alt="Prinia">
+                <h3>Prinia</h3>
+                <p>Prinias are tiny, active warblers often seen flitting about in scrubby, open habitats, and are known for their distinctive, energetic songs.</p>
+            </div>
+            <div class="bird-card">
+                <img src="quail.jpg" alt="Indian Quail">
+                <h3>Indian Quail</h3>
+                <p>The Indian quail is a small, ground-dwelling bird often found in grasslands and fields, known for its camouflaging plumage.</p>
+            </div>
+            <div class="bird-card">
+                <img src="baya.jpg" alt="Baya Weaver">
+                <h3>Baya Weaver</h3>
+                <p>The baya weaver is famous for its intricate, hanging nests and vibrant yellow plumage during the breeding season.</p>
+            </div>
+            <div class="bird-card">
+                <img src="crow.jpg" alt="House Crow">
+                <h3>House Crow</h3>
+                <p>Common in urban areas, the house crow is a highly intelligent, adaptable bird known for its problem-solving abilities.</p>
+            </div>
+            <div class="bird-card">
+                <img src="pied_kingfisher.jpg" alt="Pied Kingfisher">
+                <h3>Pied Kingfisher</h3>
+                <p>The pied kingfisher is a striking bird known for its black and white plumage and expert fishing skills.</p>
+            </div>
+            <div class="bird-card">
+                <img src="lapwing.jpg" alt="Red-wattled Lapwing">
+                <h3>Red-wattled Lapwing</h3>
+                <p>This bird is known for its loud calls and distinctive red facial wattles, often found near water bodies.</p>
+            </div>
+            <div class="bird-card">
+                <img src="tailorbird.jpg" alt="Common Tailorbird">
+                <h3>Common Tailorbird</h3>
+                <p>The common tailorbird is famous for its 'sewing' of leaves to create nests, often found in gardens and shrubs.</p>
+            </div>
+            <div class="bird-card">
+                <img src="barbet.jpg" alt="White-cheeked Barbet">
+                <h3>White-cheeked Barbet</h3>
+                <p>Known for its resonant call, the white-cheeked barbet is often found in forests and fruit orchards.</p>
+            </div>
+            <div class="bird-card">
+                <img src="jacana.jpg" alt="Pheasant-tailed Jacana">
+                <h3>Pheasant-tailed Jacana</h3>
+                <p>This unique water bird is known for its long toes that help it walk on floating vegetation in wetlands.</p>
+            </div>
+            <div class="bird-card">
+                <img src="warbler.jpg" alt="Greenish Warbler">
+                <h3>Greenish Warbler</h3>
+                <p>The greenish warbler is a small, migratory songbird found in forests and gardens, recognized for its soft, whistling song.</p>
+            </div>
+            <div class="bird-card">
+                <img src="pipit.jpg" alt="Paddyfield Pipit">
+                <h3>Paddyfield Pipit</h3>
+                <p>This ground-dwelling bird is often seen in open fields and farmlands, with a characteristic slender body and brown streaks.</p>
+            </div>
+            <div class="bird-card">
+                <img src="nightjar.jpg" alt="Indian Nightjar">
+                <h3>Indian Nightjar</h3>
+                <p>The Indian nightjar is a nocturnal bird known for its camouflage and distinctive calls heard at dusk.</p>
+            </div>
+            <div class="bird-card">
+                <img src="stork.jpg" alt="Painted Stork">
+                <h3>Painted Stork</h3>
+                <p>The painted stork is a large, wading bird known for its pink-tipped feathers and is often found in wetlands.</p>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
